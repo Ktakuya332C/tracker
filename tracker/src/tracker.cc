@@ -458,8 +458,8 @@ void Tracker::init_mu_p(int n_samp, int n_bridge,
 	std::fill(_p.begin(), _p.end(), 0.0);
 	for (int i=_n_beta-2; i>=0; i--) {
 		_mu[i] = _mu[i+1] - o_delta_beta_out[i];
-		_p[i*(_n_beta-1)+i] =
-				_p[(i+1)*(_n_beta-1)+(i+1)] + sigma_delta_beta[i];
+		_p[i*(_n_beta+1)+i] =
+				_p[(i+1)*(_n_beta+1)+(i+1)] + sigma_delta_beta[i];
 	}
 }
 
