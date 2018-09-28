@@ -1,4 +1,4 @@
--e git://github.com/Ktakuya332C/tracker.git
+-e git+https://github.com/Ktakuya332C/tracker.git#egg=tracker-0.0.1
 six
 numpy
 scipy
