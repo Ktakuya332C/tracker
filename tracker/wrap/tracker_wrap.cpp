@@ -3,20 +3,21 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "depends": [
-            "src/tracker.h",
-            "src/tracker_helper.h"
+        "depends": [],
+        "extra_compile_args": [
+            "-std=c+11"
         ],
         "include_dirs": [
-            "src/"
+            "py_tracker/src",
+            "third_party/eigen3"
         ],
         "language": "c++",
         "name": "tracker_wrap",
         "sources": [
-            "wrap/tracker_wrap.pyx",
-            "src/tracker.cc",
-            "src/tracker_helper.cc",
-            "src/math_helper.cc"
+            "pf_tracker/wrap/tracker_wrap.pyx",
+            "pf_tracker/src/tracker.cc",
+            "pf_tracker/src/tracker_helper.cc",
+            "pf_tracker/src/math_helper.cc"
         ]
     },
     "module_name": "tracker_wrap"
@@ -768,7 +769,7 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "stringsource",
-  "wrap/tracker_wrap.pyx",
+  "pf_tracker/wrap/tracker_wrap.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1147,11 +1148,11 @@ static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_b_must_be_np_ndarray[] = "b must be np.ndarray";
 static const char __pyx_k_c_must_be_np_ndarray[] = "c must be np.ndarray";
 static const char __pyx_k_w_must_be_np_ndarray[] = "w must be np.ndarray";
-static const char __pyx_k_wrap_tracker_wrap_pyx[] = "wrap/tracker_wrap.pyx";
 static const char __pyx_k_shape_of_w_is_not_appropriate[] = "shape of w is not appropriate";
 static const char __pyx_k_length_of_b_is_not_appropriate[] = "length of b is not appropriate";
 static const char __pyx_k_length_of_c_is_not_appropriate[] = "length of c is not appropriate";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
+static const char __pyx_k_pf_tracker_wrap_tracker_wrap_pyx[] = "pf_tracker/wrap/tracker_wrap.pyx";
 static PyObject *__pyx_n_s_TypeError;
 static PyObject *__pyx_n_s_b;
 static PyObject *__pyx_kp_s_b_must_be_np_ndarray;
@@ -1181,6 +1182,7 @@ static PyObject *__pyx_n_s_ndarray;
 static PyObject *__pyx_kp_s_no_default___reduce___due_to_non;
 static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
+static PyObject *__pyx_kp_s_pf_tracker_wrap_tracker_wrap_pyx;
 static PyObject *__pyx_n_s_py_lpf_ais;
 static PyObject *__pyx_n_s_py_lpf_det;
 static PyObject *__pyx_n_s_range;
@@ -1198,7 +1200,6 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_tracker_wrap;
 static PyObject *__pyx_n_s_w;
 static PyObject *__pyx_kp_s_w_must_be_np_ndarray;
-static PyObject *__pyx_kp_s_wrap_tracker_wrap_pyx;
 static PyObject *__pyx_pf_12tracker_wrap_py_lpf_det(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_b, PyObject *__pyx_v_c, PyObject *__pyx_v_w); /* proto */
 static PyObject *__pyx_pf_12tracker_wrap_2py_lpf_ais(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_b, PyObject *__pyx_v_c, PyObject *__pyx_v_w, PyObject *__pyx_v_n_samp, PyObject *__pyx_v_n_step); /* proto */
 static int __pyx_pf_12tracker_wrap_9PyTracker___cinit__(struct __pyx_obj_12tracker_wrap_PyTracker *__pyx_v_self, int __pyx_v_n_beta, int __pyx_v_n_batch, int __pyx_v_n_vis, int __pyx_v_n_hid); /* proto */
@@ -3923,6 +3924,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_no_default___reduce___due_to_non, __pyx_k_no_default___reduce___due_to_non, sizeof(__pyx_k_no_default___reduce___due_to_non), 0, 0, 1, 0},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
+  {&__pyx_kp_s_pf_tracker_wrap_tracker_wrap_pyx, __pyx_k_pf_tracker_wrap_tracker_wrap_pyx, sizeof(__pyx_k_pf_tracker_wrap_tracker_wrap_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_py_lpf_ais, __pyx_k_py_lpf_ais, sizeof(__pyx_k_py_lpf_ais), 0, 0, 1, 1},
   {&__pyx_n_s_py_lpf_det, __pyx_k_py_lpf_det, sizeof(__pyx_k_py_lpf_det), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
@@ -3940,7 +3942,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_tracker_wrap, __pyx_k_tracker_wrap, sizeof(__pyx_k_tracker_wrap), 0, 0, 1, 1},
   {&__pyx_n_s_w, __pyx_k_w, sizeof(__pyx_k_w), 0, 0, 1, 1},
   {&__pyx_kp_s_w_must_be_np_ndarray, __pyx_k_w_must_be_np_ndarray, sizeof(__pyx_k_w_must_be_np_ndarray), 0, 0, 1, 0},
-  {&__pyx_kp_s_wrap_tracker_wrap_pyx, __pyx_k_wrap_tracker_wrap_pyx, sizeof(__pyx_k_wrap_tracker_wrap_pyx), 0, 0, 1, 0},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
@@ -3984,7 +3985,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__3 = PyTuple_Pack(5, __pyx_n_s_b, __pyx_n_s_c, __pyx_n_s_w, __pyx_n_s_lpf, __pyx_n_s_std_lpf); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(1, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_wrap_tracker_wrap_pyx, __pyx_n_s_py_lpf_det, 33, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(1, 33, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pf_tracker_wrap_tracker_wrap_pyx, __pyx_n_s_py_lpf_det, 33, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(1, 33, __pyx_L1_error)
 
   /* "tracker_wrap.pyx":48
  * 	return lpf
@@ -3996,7 +3997,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__5 = PyTuple_Pack(7, __pyx_n_s_b, __pyx_n_s_c, __pyx_n_s_w, __pyx_n_s_n_samp, __pyx_n_s_n_step, __pyx_n_s_lpf, __pyx_n_s_std_lpf); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(5, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_wrap_tracker_wrap_pyx, __pyx_n_s_py_lpf_ais, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(1, 48, __pyx_L1_error)
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(5, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pf_tracker_wrap_tracker_wrap_pyx, __pyx_n_s_py_lpf_ais, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(1, 48, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;

@@ -1,0 +1,5 @@
+-e git://github.com/Ktakuya332C/tracker.git
+six
+numpy
+scipy
+matplotlib

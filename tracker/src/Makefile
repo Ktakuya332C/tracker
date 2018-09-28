@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=-g -std=c++11 -Wall
+CXXFLAGS=-g -std=c++11 -Wall -I../../third_party/eigen3/
 
 .PHONY: all
 all: tracker_test tracker_helper_test
